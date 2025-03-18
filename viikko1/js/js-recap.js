@@ -45,8 +45,8 @@ switch(task){
 
         break;
         case 3:
-            const a = Number(prompt("side a"));
-            const b = Number(prompt("side b"));
+            const a = +(prompt("side a"));
+            const b = parseFloat((prompt("side b")));
             const c = Number(prompt("side c"));
 
             let equilateral = false;
@@ -60,13 +60,15 @@ switch(task){
             }else if(a==b || a==c || b==c){
                 isosceles = true;
                 console.log("The triangle is isosceles");
-                output("The triangle is equilateral");
+                output("The triangle is isosceles");
             }else{
                 scalene = true;
                 console.log("The triangle is scalene");
                 output("The triangle is scalene");
             }
 
+        break;
+        case 4:
+            output(Math.max(Math.min(Math.floor((prompt("Give me student score")-40)/12)+1, 5), 0));
 
-                
 }
