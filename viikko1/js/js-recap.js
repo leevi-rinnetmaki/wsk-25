@@ -71,4 +71,18 @@ switch(task){
         case 4:
             output(Math.max(Math.min(Math.floor((prompt("Give me student score")-40)/12)+1, 5), 0));
 
+        break;
+        case 5:
+            const natty = +prompt("Give me a natural number");
+            let sum = -0;
+
+            if(natty>0 && Number.isInteger(natty)){
+                for(let i = 1; i<=natty; i++){
+                    sum+=i;
+                }
+                output(sum);
+            }else{
+                output("idiot");
+            }
+
 }
