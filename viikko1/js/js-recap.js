@@ -1,4 +1,8 @@
 'use strict';
+let outputElement = document.getElementById("output");
+function output(x){
+    outputElement.innerHTML=x;
+}
 const task = Number(prompt("Which task?"));
 //npm init -y
 
@@ -26,6 +30,7 @@ switch(task){
         console.log("fahrenheit to celcius ", fahToCel);
         console.log("fahrenheit to kelvin ", fahToKel);
 
+        break;
         case 2:
             const x1 = Number(prompt("x1"));
             const y1 = Number(prompt("y1"));
@@ -38,10 +43,30 @@ switch(task){
             const distance = (Δx**2+Δy**2)**0.5;
             console.log(distance);
 
+        break;
         case 3:
             const a = Number(prompt("side a"));
             const b = Number(prompt("side b"));
             const c = Number(prompt("side c"));
+
+            let equilateral = false;
+            let isosceles = false;
+            let scalene =false;
+
+            if(a==b && a==c && b==c){
+                equilateral = true;
+                console.log("The triangle is equilateral.");
+                output("The triangle is equilateral");
+            }else if(a==b || a==c || b==c){
+                isosceles = true;
+                console.log("The triangle is isosceles");
+                output("The triangle is equilateral");
+            }else{
+                scalene = true;
+                console.log("The triangle is scalene");
+                output("The triangle is scalene");
+            }
+
 
                 
 }
