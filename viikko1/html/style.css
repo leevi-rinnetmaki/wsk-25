@@ -1,0 +1,26 @@
+*{
+    font-family: "Comic Sans MS", "Comic Sans";
+}
+
+a{
+    font-size:32px;
+    color:rgb(226, 87, 12);
+    text-decoration: none;
+}
+
+a:hover{
+    font-size:64px;
+}
+
+img{
+    border: 16px solid #a81a1a;
+    border-radius: 250px;
+}
+
+li{
+    list-style: upper-roman;
+}
+
+tr:nth-child(even){
+    background-color: rgb(255, 157, 0);
+}

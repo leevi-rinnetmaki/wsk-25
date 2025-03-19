@@ -37,10 +37,10 @@ switch(task){
             const x2 = Number(prompt("x2"));
             const y2 = Number(prompt("y2"));
 
-            const Δx = x2-x1;
-            const Δy = y2-y1;
+            const dx = x2-x1;
+            const dy = y2-y1;
 
-            const distance = (Δx**2+Δy**2)**0.5;
+            const distance = (dx**2+dy**2)**0.5;
             console.log(distance);
 
         break;
