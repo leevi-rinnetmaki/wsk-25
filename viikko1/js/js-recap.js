@@ -85,4 +85,25 @@ switch(task){
                 output("idiot");
             }
 
+        break;
+        case 6:
+            const userInput = +prompt();
+            if(userInput>0 && Number.isInteger(userInput)){
+                for(let i = 1; i <= userInput; i++){
+                    let row = document.createElement("tr");
+                    row.classList.add(i);
+                    document.getElementById("table").appendChild(row);
+                    for(let j = 1; j <= userInput; j++){
+                        let product = document.createElement("td");
+                        let productNode = document.createTextNode(i*j);
+                        product.appendChild(productNode);
+                        document.getElementsByClassName(i)[0].appendChild(product);
+                    }
+                }
+            }else{
+                output("idiot");
+            }
+
+
+
 }
