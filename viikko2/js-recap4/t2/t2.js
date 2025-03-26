@@ -771,7 +771,3 @@ const restaurants = [
 ];
 
 // your code here
-const target = document.querySelector("table");
-const cordinates = [24,60];
-
-restaurants.forEach(() => {5})
