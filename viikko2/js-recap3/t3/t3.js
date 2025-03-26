@@ -9,7 +9,7 @@ const currentTime= document.createElement("p");
 const currentDate= document.createElement("p");
 
 browserName.append(document.createTextNode(navigator.userAgent));
-os.append(document.createTextNode(navigator.userAgent));
+os.append(document.createTextNode(navigator.platform));
 width.append(document.createTextNode(window.innerWidth));
 height.append(document.createTextNode(window.innerHeight));
 availabeSpace.append(document.createTextNode(window.outerHeight*window.outerWidth));

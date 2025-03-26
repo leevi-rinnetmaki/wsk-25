@@ -771,7 +771,44 @@ const restaurants = [
 ];
 
 // your code here
+const getDistance = (from, where) => {
+  return ((where[0]-from[0])**2 + (where[1]-from[1])**2)**0.5;
+};
 const target = document.querySelector("table");
-const cordinates = [24,60];
+let coordinates = [];
+let sortedRestaurants = [];
 
-restaurants.forEach(() => {5})
+const setRestaurants = () =>{
+  navigator.geolocation.getCurrentPosition((position) =>{
+    coordinates[0]=position.coords.latitude;
+    coordinates[1]=position.coords.longitude;
+
+    restaurants.sort((a, b)=>{
+      return getDistance(coordinates, a.location.coordinates) - getDistance(coordinates, b.location.coordinates);
+      //restaurants
+      //console.log(getDistance(coordinates, restaurant.location.coordinates));
+    })
+    restaurants.forEach((restaurant=>{
+      let restaurantElement = document.createElement("tr");
+      let restaurantElementName = document.createElement("th");
+      let restaurantElementAddress = document.createElement("th");
+
+      let restaurantElementNameNode = document.createTextNode(restaurant.name);
+      let restaurantElementAddressNode = document.createTextNode(restaurant.address);
+
+      restaurantElementName.append(restaurantElementNameNode);
+      restaurantElementAddress.append(restaurantElementAddressNode);
+
+
+    
+
+      restaurantElement.append(restaurantElementName, restaurantElementAddress);
+      target.append(restaurantElement);
+    }))
+
+    
+  },(error) => {
+    console.log(error);
+  });
+}
+setRestaurants();
