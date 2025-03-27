@@ -785,8 +785,6 @@ const setRestaurants = () =>{
 
     restaurants.sort((a, b)=>{
       return getDistance(coordinates, a.location.coordinates) - getDistance(coordinates, b.location.coordinates);
-      //restaurants
-      //console.log(getDistance(coordinates, restaurant.location.coordinates));
     })
     restaurants.forEach((restaurant=>{
       let restaurantElement = document.createElement("tr");
@@ -798,9 +796,6 @@ const setRestaurants = () =>{
 
       restaurantElementName.append(restaurantElementNameNode);
       restaurantElementAddress.append(restaurantElementAddressNode);
-
-
-    
 
       restaurantElement.append(restaurantElementName, restaurantElementAddress);
       target.append(restaurantElement);
