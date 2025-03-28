@@ -771,3 +771,45 @@ const restaurants = [
 ];
 
 // your code here
+restaurants.sort((a, b)=>{return a.name.localeCompare(b.name)});
+restaurants.forEach((restaurant)=>{
+  let row = document.createElement("tr");
+  let name = document.createElement("th");
+  let address = document.createElement("th");
+
+  name.textContent=restaurant.name;
+  address.textContent=restaurant.address;
+
+  row.addEventListener("click", ()=>{
+    document.querySelectorAll(".highlight").forEach((a)=>{a.classList.remove("highlight")});
+    document.querySelector("dialog").innerHTML="";
+    row.classList.add("highlight");
+    let modalName = document.createElement("p");
+    let modalAddress = document.createElement("p");
+    let modalPostalCode = document.createElement("p");
+    let modalCity = document.createElement("p");
+    let modalPhone = document.createElement("p");
+    let modalCompany = document.createElement("p");
+
+    modalName.textContent="Name: " + restaurant.name;
+    modalAddress.textContent="Address: " + restaurant.address;
+    modalPostalCode.textContent="Postal code: " + restaurant.postalCode;
+    modalCity.textContent="City: " + restaurant.city;
+    modalPhone.textContent="Phonenumber: " + restaurant.phone;
+    modalCompany.textContent="Company: " + restaurant.company;
+
+    document.querySelector("dialog").append(modalName, modalAddress, modalPostalCode, modalCity, modalPhone, modalCompany);
+    document.querySelector("dialog").showModal();
+
+  });
+
+  document.querySelector("dialog").addEventListener("click", (event) => {
+    if (event.target === document.querySelector("dialog")) {
+      document.querySelector("dialog").close();
+      document.querySelectorAll(".highlight").forEach((a)=>{a.classList.remove("highlight")});
+    }
+  });
+
+  row.append(name, address);
+  document.querySelector("table").append(row);
+});

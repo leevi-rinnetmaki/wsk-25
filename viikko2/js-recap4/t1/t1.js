@@ -65,7 +65,6 @@ addItems(todoList);
 addButton.addEventListener("click", ()=>{
   dialog.style.display="block";
 })
-form.onSubmit
 form.addEventListener("submit", (e)=>{
   e.preventDefault();
   addItems(
@@ -79,5 +78,3 @@ form.addEventListener("submit", (e)=>{
   );
   dialog.style.display="none";
 })
-
-//addItemButton.textContent("dada");
