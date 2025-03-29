@@ -51,10 +51,11 @@ const getRestaurants = async()=>{
           courseList.append(courseName, coursePrice, courseDiets);
           document.querySelector("dialog").append(courseList);
         })
-      }catch(e){}
+      }catch(error){
+        console.log(error);
+      }
 
       document.querySelector("dialog").showModal();
-
     });
 
     document.querySelector("dialog").addEventListener("click", (event) => {
